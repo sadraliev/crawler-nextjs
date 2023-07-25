@@ -22,15 +22,15 @@ function sortChildren(array) {
   });
 }
 
-async function saveResultsToJSON(data) {
+async function saveResultsToJSON(data, path) {
   const readable = new stream.Readable({
     read() {
-      this.push(JSON.stringify(data, null, 2)); // Преобразование данных в форматированную JSON-строку
-      this.push(null); // Сигнал о завершении чтения данных
+      this.push(JSON.stringify(data, null, 2));
+      this.push(null);
     },
   });
 
-  const writeStream = fs.createWriteStream("./public/results.json");
+  const writeStream = fs.createWriteStream(path);
 
   readable.pipe(writeStream);
 

@@ -1,15 +1,19 @@
-const BASE_URL = "https://www.regfile.ru/okved2.html";
+require("dotenv").config({ path: ".env.local" });
 const puppeteer = require("puppeteer-core");
+
 const { handleDetailsPage } = require("./details.page");
 const { handleMainPage } = require("./main.page");
 const { saveResultsToJSON } = require("./helper");
+
+const BASE_URL = process.env.WEBSITE_URL;
+const PATH_FILE = process.env.NEXT_PUBLIC_FILE_PATH;
 
 async function crawlWebsite(url) {
   const browser = await puppeteer.launch({
     headless: true,
     executablePath:
       "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
-  }); // Установите значение false, чтобы видеть процесс в браузере
+  });
 
   const results = [];
 
@@ -32,7 +36,7 @@ async function crawlWebsite(url) {
 crawlWebsite(BASE_URL)
   .then(data => {
     console.log(data);
-    return saveResultsToJSON(data);
+    return saveResultsToJSON(data, `./public/${PATH_FILE}`);
   })
   .then(() => {
     console.log("Данные успешно сохранены в results.json");
