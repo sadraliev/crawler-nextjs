@@ -5,7 +5,7 @@ const { handleDetailsPage } = require("./details.page");
 const { handleMainPage } = require("./main.page");
 const { saveResultsToJSON } = require("./helper");
 
-const BASE_URL = process.env.WEBSITE_URL;
+const BASE_URL = process.env.SCRAPE_URL;
 const PATH_FILE = process.env.NEXT_PUBLIC_FILE_PATH;
 
 async function crawlWebsite(url) {

@@ -21,6 +21,11 @@ async function handleDetailsPage(browser, url) {
       }
     }
 
+    function removeCharacter(text, character) {
+      const regex = new RegExp(`\\${character}\\s?`, "g");
+      return text.replace(regex, "").trim();
+    }
+
     elements.forEach(el => {
       const link = el.querySelector("a");
       const withStar = el.querySelector(".okved") ? true : false;
@@ -35,7 +40,7 @@ async function handleDetailsPage(browser, url) {
           link: link.href,
           code,
           withStar,
-          fullText,
+          fullText: removeCharacter(fullText, "★"),
           children: [],
         },
         levels

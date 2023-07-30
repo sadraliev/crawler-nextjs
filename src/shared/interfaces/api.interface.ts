@@ -1,4 +1,4 @@
-export interface scrapedData {
+export interface ScrapedData {
   sectionType: string;
   sectionName: string;
   sectionURL: string;
