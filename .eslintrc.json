@@ -1,6 +1,22 @@
 {
   "extends": "next/core-web-vitals",
+  "plugins": ["import"],
+
   "rules": {
-    "react/display-name": "off"
+    "react/display-name": "off",
+    "no-console": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          ["builtin", "external"],
+          ["internal", "parent", "sibling", "index"]
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc"
+        }
+      }
+    ]
   }
 }

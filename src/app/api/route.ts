@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
-import scrapedData from "@public/results.json";
+
 import { searchInScrapedData } from "@/shared/utils/common";
+import scrapedData from "@public/results.json";
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);

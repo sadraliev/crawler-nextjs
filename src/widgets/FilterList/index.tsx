@@ -1,11 +1,12 @@
 "use client";
 import React, { useState } from "react";
-import { useFetchCodes } from "@/shared/hooks/useFetchOKVEDs";
+
+import { List } from "./List";
 import { SearchIcon } from "@/shared/components/Icons";
 import { TextField } from "@/shared/components/TextField/TextField";
-import { useAutoFocus } from "@/shared/hooks/useAutoFocus";
 import { SEARCH_BY_CODE, SELF_GRAY_COLOR } from "@/shared/consts/main";
-import { List } from "./List";
+import { useAutoFocus } from "@/shared/hooks/useAutoFocus";
+import { useFetchCodes } from "@/shared/hooks/useFetchOKVEDs";
 
 const FilterList = () => {
   const searchRef = useAutoFocus();

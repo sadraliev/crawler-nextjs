@@ -1,11 +1,11 @@
-import { STORAGE_KEY } from "@/shared/consts/main";
+import React, { useId, useState } from "react";
+
 import {
   getTreeFromLocalStorage,
   removeItemFromTree,
   saveTreeToLocalStorage,
   updateTreeWithItem,
 } from "@/shared/utils/common";
-import React, { useId, useState } from "react";
 
 interface ListItemProps {
   text: string;

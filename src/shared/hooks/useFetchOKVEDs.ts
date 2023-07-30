@@ -1,9 +1,9 @@
 "use client";
 import useSWR from "swr";
 
+import { useDebounce } from "./useDebounce";
 import { ScrapedData } from "@/shared/interfaces/api.interface";
 import { fetcher, pathBuilder } from "@/shared/utils/common";
-import { useDebounce } from "./useDebounce";
 
 type UseFetchCodesReturn = {
   scrapedData?: ScrapedData[];

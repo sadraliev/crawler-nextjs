@@ -1,4 +1,5 @@
 import { FC } from "react";
+
 import { NOT_FOUND } from "../consts/main";
 
 interface NotFoundProps {

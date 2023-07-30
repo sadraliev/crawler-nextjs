@@ -1,7 +1,7 @@
-import { configuration } from "@/shared/config/configuration";
 import { PathBuilder } from "./query.builder";
-import { Detail, ScrapedData } from "../interfaces/api.interface";
 import { STORAGE_KEY } from "../consts/main";
+import { Detail, ScrapedData } from "../interfaces/api.interface";
+import { configuration } from "@/shared/config/configuration";
 
 export const pathBuilder = new PathBuilder(configuration.getUrl());
 
@@ -91,7 +91,6 @@ export function updateTreeWithItem(
     if (!node.children) {
       node.children = [];
     }
-    console.log("node", node);
     currentTree = node.children;
   }
   if (node) {

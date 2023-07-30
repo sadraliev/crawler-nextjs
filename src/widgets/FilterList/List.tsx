@@ -1,10 +1,11 @@
-import { ScrapedData } from "@/shared/interfaces/api.interface";
 import React from "react";
+
 import { DetailItem } from "./DetailItem";
 import { ListTitle } from "./DetailTItle";
 import { ErrorMessage } from "@/shared/components/ErrorMessage";
 import { Loader } from "@/shared/components/Loader/Loader";
 import { NotFound } from "@/shared/components/NotFound";
+import { ScrapedData } from "@/shared/interfaces/api.interface";
 
 interface ListProps {
   list: ScrapedData[] | undefined;

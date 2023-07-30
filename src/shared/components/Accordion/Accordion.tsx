@@ -1,4 +1,5 @@
 import { FC, ReactNode, useState } from "react";
+
 import { ArrowIcon } from "../Icons";
 
 interface IAccordion {

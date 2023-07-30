@@ -1,4 +1,5 @@
 import React from "react";
+
 import { SOMETHING_WENT_WRONG } from "../consts/main";
 
 interface ErrorMessageProps {
