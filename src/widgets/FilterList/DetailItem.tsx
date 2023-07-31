@@ -26,23 +26,25 @@ export const DetailItem: FC<IDetailProps> = ({ detail }) => {
     );
   }
   return (
-    <Accordion
-      title={() => (
-        <ListItem
-          text={detail.fullText}
-          id={detail.fullText}
-          defaultValue={isChecked}
-        />
-      )}
-      defaultValue={hasChild}
-    >
-      {detail.children && detail.children.length > 0 && (
-        <>
-          {detail.children.map(child => (
-            <DetailItem key={child.code} detail={child} />
-          ))}
-        </>
-      )}
-    </Accordion>
+    <div className="ps-6">
+      <Accordion
+        title={() => (
+          <ListItem
+            text={detail.fullText}
+            id={detail.fullText}
+            defaultValue={isChecked}
+          />
+        )}
+        defaultValue={hasChild}
+      >
+        {detail.children && detail.children.length > 0 && (
+          <>
+            {detail.children.map(child => (
+              <DetailItem key={child.code} detail={child} />
+            ))}
+          </>
+        )}
+      </Accordion>
+    </div>
   );
 };

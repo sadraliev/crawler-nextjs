@@ -1,34 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# О проекте
 
-## Getting Started
+В этом проекте, решил применить архитектурный стиль "[Feature Sliced Design](https://feature-sliced.design/)". 
 
-First, run the development server:
+Для создания приложения использовал NEXT.JS 13
+с использованием [App Router](https://nextjs.org/docs/app).
 
+Мой выбор пал на NEXT.JS по нескольким причинам:
+- SSR
+- Полноценный фреймворк
+- CRA больше не поддерживается
+
+Обработкой данных и ее фильтрацией занимается NextJS на стороне сервера. 
+Для обработки endpointов используется [API Handlers](https://nextjs.org/docs/app/building-your-application/routing/router-handlers)
+
+Для получения данных на стороне клиента используется [SWR](https://swr.vercel.app/)
+
+Директория `crawler` служит для парсинга данных с [вебсайта](https://www.regfile.ru/okved2.html).
+
+# Быстрый старт
+подготовка
+- node v18
+- npm v9.26.4
+- react v18
+- nextjs v13.0.7
+- typescript v5.0.4
+- tailwindcss v3.3.3
+- puppeteer-core v^20.9.0
+
+склонируйте репозиторий 
+`git clone https://github.com/sadraliev/crawler-nextjs.git`
+
+создайте файл `.env` и укажите следующие данные:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+# название файла для спарсенных данных
+NEXT_PUBLIC_FILE_PATH=''
+# URL адрес сервера
+NEXT_PUBLIC_BASE_URL='http://localhost:3000'
+# URL адрес сайта, с которого нужно спарсить данные.
+SCRAPE_URL='https://www.regfile.ru/okved2.html'
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+После чего установите все независимости и запустите приложение в development режиме:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- npm install --force
+- npm run dev
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

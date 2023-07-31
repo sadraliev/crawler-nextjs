@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 import { DetailItem } from "./DetailItem";
 import { ListTitle } from "./DetailTItle";
@@ -29,11 +29,11 @@ export const List: React.FC<ListProps> = ({ list, isLoading, isError }) => {
   }
   return list?.map(okved => (
     <div
-      className="my-3 py-3 rounded bg-black bg-opacity-20"
+      className="m-3 py-3 rounded bg-black bg-opacity-20"
       key={okved.sectionName}
     >
       <ListTitle type={okved.sectionType} name={okved.sectionName} />
-      <ul className="mx-6">
+      <ul className="text-white text-left font-medium">
         {okved.details.map(detail => (
           <DetailItem key={detail.code} detail={detail} />
         ))}

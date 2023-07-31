@@ -41,7 +41,7 @@ export const ListItem: React.FC<ListItemProps> = ({
       />
       <label htmlFor={checkboxId} className="flex items-center cursor-pointer">
         <div
-          className={`w-5 h-5 border-2 ${
+          className={`min-w-[20px] h-[20px] border-2 ${
             checked ? "bg-amber-500" : "bg-white"
           } rounded-md mr-2`}
         ></div>
