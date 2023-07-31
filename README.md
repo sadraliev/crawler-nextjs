@@ -1,5 +1,7 @@
 # О проекте
 
+[DEMO](https://crawler-nextjs.vercel.app/)
+
 В этом проекте, решил применить архитектурный стиль "[Feature Sliced Design](https://feature-sliced.design/)". 
 
 Для создания приложения использовал NEXT.JS 13
